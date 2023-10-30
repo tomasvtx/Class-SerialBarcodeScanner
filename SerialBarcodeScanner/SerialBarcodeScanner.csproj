@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9736A4B1-CE37-4553-966B-4B234BFB4428}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SerialBarcodeScanner</RootNamespace>
+    <AssemblyName>SerialBarcodeScanner</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AppConfigure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\.NET 3.5\AppConfigure\1.0\AppConfigure\bin\Release\AppConfigure.dll</HintPath>
+    </Reference>
+    <Reference Include="DAIKIN Label">
+      <HintPath>..\..\..\..\.NET 2.0\DaikinLabel\1.0\DAIKIN Label\bin\Release\DAIKIN Label.dll</HintPath>
+    </Reference>
+    <Reference Include="Dialogs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dialogs\1.0\Dialogs\bin\Release\Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\.NET 4.5\Logger\1.0\Logger\bin\Release\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="MyApplication">
+      <HintPath>..\..\..\MyApplication\MyApplication\bin\Release\MyApplication.dll</HintPath>
+    </Reference>
+    <Reference Include="NET Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\netUtilities\1.0\NET Helper\bin\Release\NET Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoReader.cs" />
+    <Compile Include="Model\BarcodeReaderData.cs" />
+    <Compile Include="Model\Interface.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reader\BcrReader.cs" />
+    <Compile Include="Reader\BcrReaderInternal.cs" />
+    <Compile Include="Reader\Loger.cs" />
+    <Compile Include="Reader\ReadVariant.cs" />
+    <Compile Include="Model\ReadMode.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
